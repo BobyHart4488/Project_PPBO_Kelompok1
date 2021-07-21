@@ -1,12 +1,16 @@
 package project_ppbo_kelompok1;
 
 import java.awt.HeadlessException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Utama_Admin extends javax.swing.JFrame {
 
@@ -401,6 +405,11 @@ public class Utama_Admin extends javax.swing.JFrame {
 
         btnCetak1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCetak1.setText("Cetak");
+        btnCetak1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetak1ActionPerformed(evt);
+            }
+        });
 
         btnKeluar1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnKeluar1.setText("Keluar");
@@ -648,7 +657,14 @@ public class Utama_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
-        // TODO add your handling code here:
+        try{
+            InputStream is=Utama_Admin.class.getResourceAsStream("/jasper_ppbo_kelompok1/Utama_Admin_Siswa.jasper");
+            JasperPrint jsPrint=JasperFillManager.fillReport(is, null, Config.configDb());
+            JasperViewer.viewReport(jsPrint, false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "Report Data Siswa", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCetakActionPerformed
 
     private void btnSimpan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan1ActionPerformed
@@ -716,6 +732,17 @@ public class Utama_Admin extends javax.swing.JFrame {
     private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClear1ActionPerformed
         clearGuru();
     }//GEN-LAST:event_btnClear1ActionPerformed
+
+    private void btnCetak1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetak1ActionPerformed
+        try{
+            InputStream is=Utama_Admin.class.getResourceAsStream("/project_ppbo_kelompok1/Utama_Admin_Guru.jasper");
+            JasperPrint jsPrint=JasperFillManager.fillReport(is, null, Config.configDb());
+            JasperViewer.viewReport(jsPrint, false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "Report Data Guru", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCetak1ActionPerformed
 
     private void Data(){
         String[] kolomGuru = {"No", "NIP", "Nama Guru", "Password", "Kelas"};
