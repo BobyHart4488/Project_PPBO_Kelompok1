@@ -958,9 +958,7 @@ public class Utama_Admin extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Database gagal "+e.getMessage());
         }
-    }
-    
-    
+    }    
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
