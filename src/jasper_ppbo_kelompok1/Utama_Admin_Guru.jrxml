@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c1a062c-9b12-49e4-9386-aef6a2680799">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.4641000000000006"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
@@ -35,21 +35,21 @@
 	</background>
 	<title>
 		<band height="104" splitType="Stretch">
-			<image>
-				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="50" y="4" width="100" height="100"/>
-				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="649" y="4" width="100" height="100"/>
-				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement uuid="6fd34ebd-ee41-479c-9203-6a6fd61ee3f3" x="341" y="38" width="110" height="35"/>
 				<textElement textAlignment="Center">
-					<font size="20"/>
+					<font fontName="Tahoma" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data Guru]]></text>
 			</staticText>
+			<image>
+				<reportElement uuid="2db7fbd0-1b71-4c16-96bc-d44a2be0a101" x="608" y="11" width="89" height="86"/>
+				<imageExpression><![CDATA["D:\\Local Private\\JetBrains\\IntelliJ\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="341f326f-5cad-4c29-acbf-12fdf5371a6a" x="96" y="2" width="100" height="100"/>
+				<imageExpression><![CDATA["D:\\Local Private\\JetBrains\\IntelliJ\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -58,25 +58,18 @@
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="29962c88-5853-4bfe-96e4-e8e8b49c7e49" x="195" y="41" width="100" height="20"/>
+				<reportElement uuid="29962c88-5853-4bfe-96e4-e8e8b49c7e49" x="195" y="41" width="122" height="20"/>
 				<textElement textAlignment="Center">
 					<font size="13"/>
 				</textElement>
 				<text><![CDATA[NIP]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="f2697aee-7d6d-43d5-8229-b3840ec128ca" x="295" y="41" width="100" height="20"/>
+				<reportElement uuid="f2697aee-7d6d-43d5-8229-b3840ec128ca" x="317" y="41" width="178" height="20"/>
 				<textElement textAlignment="Center">
 					<font size="13"/>
 				</textElement>
 				<text><![CDATA[Nama]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="fc029ede-7ca6-46fb-8a1f-d7e7c87656c7" x="395" y="41" width="100" height="20"/>
-				<textElement textAlignment="Center">
-					<font size="13"/>
-				</textElement>
-				<text><![CDATA[Password]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="52b10d8d-da73-4f7a-a694-81ee0290666b" x="495" y="41" width="100" height="20"/>
@@ -90,19 +83,14 @@
 	<detail>
 		<band height="23" splitType="Stretch">
 			<textField>
-				<reportElement uuid="d3be275b-4899-47a2-9432-d91f654169b2" x="195" y="0" width="100" height="20"/>
+				<reportElement uuid="d3be275b-4899-47a2-9432-d91f654169b2" x="195" y="0" width="122" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="0764dc96-963c-470d-8856-259f7c228130" x="295" y="0" width="100" height="20"/>
+				<reportElement uuid="0764dc96-963c-470d-8856-259f7c228130" x="317" y="0" width="178" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement uuid="7048c24a-3e57-4d4f-b54d-266f660caa93" x="395" y="0" width="100" height="20"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{password}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="5a86968d-31a2-412a-9868-eafc5402859b" x="495" y="0" width="100" height="20"/>

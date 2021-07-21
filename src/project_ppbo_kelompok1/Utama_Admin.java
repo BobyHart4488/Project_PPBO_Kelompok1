@@ -20,6 +20,23 @@ public class Utama_Admin extends javax.swing.JFrame {
     public Utama_Admin() {
         initComponents();
         Data();
+        ComboBox();
+    }
+    
+    private void ComboBox(){
+        try{
+            String sql3 = "SELECT kelas FROM guru GROUP BY kelas";
+            int no = 1;
+
+            Connection conn = (Connection)Config.configDb();
+            Statement stm3 = conn.createStatement();
+            ResultSet res3 = stm3.executeQuery(sql3);
+            while (res3.next()) {
+                comboKelas.addItem(res3.getString("kelas"));
+            }
+        } catch(SQLException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
     
     private void genderGetSelected(){
@@ -119,10 +136,12 @@ public class Utama_Admin extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akademik Siswa SD - Admin");
-        setLocation(new java.awt.Point(300, 100));
+        setLocation(new java.awt.Point(330, 100));
         setSize(new java.awt.Dimension(1200, 800));
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -261,37 +280,16 @@ public class Utama_Admin extends javax.swing.JFrame {
         jPanelSiswaLayout.setHorizontalGroup(
             jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSiswaLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                        .addGap(338, 338, 338)
+                        .addComponent(jLabel15)
+                        .addGap(403, 403, 403)
+                        .addComponent(jLabel1))
+                    .addComponent(searchSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelSiswaLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
                         .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                                .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addGap(28, 28, 28)
-                                .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNISN)
-                                    .addComponent(txtNama)
-                                    .addComponent(txtTTL)
-                                    .addComponent(txtAlamat)
-                                    .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                                        .addComponent(radioLakilaki)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(radioPerempuan))
-                                    .addComponent(comboKelas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(radioSem1)
-                                        .addGap(38, 38, 38)
-                                        .addComponent(radioSem2))
-                                    .addComponent(comboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanelSiswaLayout.createSequentialGroup()
                                 .addComponent(btnSimpan)
                                 .addGap(18, 18, 18)
@@ -301,18 +299,42 @@ public class Utama_Admin extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnClear)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCetak)))
+                                .addComponent(btnCetak))
+                            .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSiswaLayout.createSequentialGroup()
+                                    .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel6))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtAlamat)
+                                        .addComponent(comboKelas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanelSiswaLayout.createSequentialGroup()
+                                            .addGap(30, 30, 30)
+                                            .addComponent(radioSem1)
+                                            .addGap(38, 38, 38)
+                                            .addComponent(radioSem2))
+                                        .addComponent(comboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSiswaLayout.createSequentialGroup()
+                                    .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel5))
+                                    .addGap(28, 28, 28)
+                                    .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtNISN)
+                                        .addComponent(txtNama)
+                                        .addComponent(txtTTL, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanelSiswaLayout.createSequentialGroup()
+                                            .addComponent(radioLakilaki)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(radioPerempuan))))))
                         .addGap(18, 18, 18)
                         .addComponent(btnKeluar))
-                    .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelSiswaLayout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addGap(403, 403, 403)
-                                .addComponent(jLabel1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1042, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(searchSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1042, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanelSiswaLayout.setVerticalGroup(
@@ -344,21 +366,21 @@ public class Utama_Admin extends javax.swing.JFrame {
                     .addComponent(radioPerempuan))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(comboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(comboKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
                     .addComponent(radioSem1)
-                    .addComponent(radioSem2))
+                    .addComponent(radioSem2)
+                    .addComponent(jLabel9))
                 .addGap(35, 35, 35)
                 .addGroup(jPanelSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpan)
@@ -369,7 +391,7 @@ public class Utama_Admin extends javax.swing.JFrame {
                     .addComponent(btnKeluar))
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Data Siswa", jPanelSiswa);
@@ -555,7 +577,7 @@ public class Utama_Admin extends javax.swing.JFrame {
                             .addComponent(btnKeluar1))))
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Data Guru", jPanelGuru);
@@ -570,14 +592,22 @@ public class Utama_Admin extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel20.setText("Sistem Akademik Siswa SD");
 
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TWH.png"))); // NOI18N
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SD.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(278, 278, 278)
+                .addGap(59, 59, 59)
+                .addComponent(jLabel18)
+                .addGap(113, 113, 113)
                 .addComponent(jLabel20)
-                .addGap(1658, 1658, 1658)
+                .addGap(113, 113, 113)
+                .addComponent(jLabel22)
+                .addGap(1455, 1455, 1455)
                 .addComponent(jLabel17)
                 .addGap(86, 86, 86)
                 .addComponent(jLabel19)
@@ -594,8 +624,13 @@ public class Utama_Admin extends javax.swing.JFrame {
                             .addComponent(jLabel20)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addComponent(jLabel19)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel18))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -888,7 +923,6 @@ public class Utama_Admin extends javax.swing.JFrame {
 
         String sql = "SELECT * FROM guru";
         String sql2 = "SELECT * FROM siswa";
-        String sql3 = "SELECT kelas FROM guru GROUP BY kelas";
 
         try {
             int no = 1;
@@ -920,11 +954,6 @@ public class Utama_Admin extends javax.swing.JFrame {
                 String[] dataSiswa = {""+no, nisn, nama, ttl, jk, agama, alamat, kelas, semester};
                 model2.addRow(dataSiswa);
                 no++;
-            }
-            Statement stm3 = conn.createStatement();
-            ResultSet res3 = stm3.executeQuery(sql3);
-            while (res3.next()) {
-                comboKelas.addItem(res3.getString("kelas"));
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Database gagal "+e.getMessage());
@@ -967,9 +996,11 @@ public class Utama_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

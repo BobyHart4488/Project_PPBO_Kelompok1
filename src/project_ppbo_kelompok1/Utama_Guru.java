@@ -18,6 +18,8 @@ public class Utama_Guru extends javax.swing.JFrame {
     public Utama_Guru() {
         initComponents();
         Data();
+        labelKelas.setText(Login.kelas);
+        labelKelas.getText();
     }
 
     @SuppressWarnings("unchecked")
@@ -83,12 +85,15 @@ public class Utama_Guru extends javax.swing.JFrame {
         tablePresensiSiswaKelas = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
         txtAlfa = new javax.swing.JTextField();
+        labelKelas = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akademik Siswa SD - Guru");
-        setLocation(new java.awt.Point(300, 100));
+        setLocation(new java.awt.Point(330, 100));
         setSize(new java.awt.Dimension(1200, 800));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -594,19 +599,24 @@ public class Utama_Guru extends javax.swing.JFrame {
                             .addComponent(txtNISN3)
                             .addComponent(txtSakit)
                             .addComponent(txtIzin, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelPresensiLayout.createSequentialGroup()
-                        .addGap(384, 384, 384)
-                        .addComponent(jLabel14))
-                    .addGroup(jPanelPresensiLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelPresensiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPresensiLayout.createSequentialGroup()
+                            .addGap(384, 384, 384)
+                            .addComponent(jLabel14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelKelas))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPresensiLayout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanelPresensiLayout.setVerticalGroup(
             jPanelPresensiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPresensiLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel14)
+                .addGroup(jPanelPresensiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(labelKelas))
                 .addGap(42, 42, 42)
                 .addGroup(jPanelPresensiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelPresensiLayout.createSequentialGroup()
@@ -648,6 +658,10 @@ public class Utama_Guru extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel20.setText("Sistem Akademik Siswa SD");
 
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TWH.png"))); // NOI18N
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SD.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -656,13 +670,27 @@ public class Utama_Guru extends javax.swing.JFrame {
                 .addGap(268, 268, 268)
                 .addComponent(jLabel20)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(61, 61, 61)
+                    .addComponent(jLabel21)
+                    .addGap(878, 878, 878)
+                    .addComponent(jLabel22)
+                    .addContainerGap(61, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(jLabel20)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(25, 25, 25)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel22)
+                        .addComponent(jLabel21))
+                    .addContainerGap(26, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -916,7 +944,7 @@ public class Utama_Guru extends javax.swing.JFrame {
         try{
             InputStream is=Utama_Guru.class.getResourceAsStream("/jasper_ppbo_kelompok1/Utama_Guru_Nilai.jasper");
             HashMap parameter = new HashMap();
-            parameter.put("Loginkelas", Login.kelas);
+            parameter.put("Loginkelas", labelKelas.getText());
             JasperPrint jsPrint=JasperFillManager.fillReport(is, parameter, Config.configDb());
             JasperViewer.viewReport(jsPrint, false);
         } catch (Exception e) {
@@ -929,7 +957,7 @@ public class Utama_Guru extends javax.swing.JFrame {
         try{
             InputStream is=Utama_Guru.class.getResourceAsStream("/jasper_ppbo_kelompok1/Utama_Guru_Presensi.jasper");
             HashMap parameter = new HashMap();
-            parameter.put("kelasLogin", Login.kelas);
+            parameter.put("Loginkelas", labelKelas.getText());
             JasperPrint jsPrint=JasperFillManager.fillReport(is, parameter, Config.configDb());
             JasperViewer.viewReport(jsPrint, false);
         } catch (Exception e) {
@@ -1027,7 +1055,7 @@ public class Utama_Guru extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCetak;
     private javax.swing.JButton btnCetak1;
@@ -1055,6 +1083,8 @@ public class Utama_Guru extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1071,6 +1101,7 @@ public class Utama_Guru extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel labelKelas;
     private javax.swing.JTable tableNilaiSiswaKelas;
     private javax.swing.JTable tablePresensiSiswaKelas;
     private javax.swing.JTable tableSiswaKelas;

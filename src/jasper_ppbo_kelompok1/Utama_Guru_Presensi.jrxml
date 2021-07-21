@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31e58c30-aad1-41dc-bb8e-00691b14b0c8">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.3310000000000004"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="kelasLogin" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="Loginkelas" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT * FROM presensi_siswa ps, siswa s
 WHERE ps.nisn = s.nisn
-AND ps.kelas=$P{kelasLogin}]]>
+AND s.kelas=$P{kelasLogin}]]>
 	</queryString>
 	<field name="id_presensi" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -29,6 +32,24 @@ AND ps.kelas=$P{kelasLogin}]]>
 	<field name="nama" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="ttl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_kelamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="agama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semester" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<group name="id_presensi">
 		<groupExpression><![CDATA[$F{id_presensi}]]></groupExpression>
 	</group>
@@ -46,21 +67,21 @@ AND ps.kelas=$P{kelasLogin}]]>
 	</background>
 	<title>
 		<band height="101" splitType="Stretch">
-			<image>
-				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="57" y="0" width="100" height="100"/>
-				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="628" y="1" width="100" height="100"/>
-				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
-			</image>
 			<staticText>
-				<reportElement uuid="3a43a743-3b29-41b8-ad69-0ab1a073778e" x="320" y="34" width="161" height="35"/>
+				<reportElement uuid="3a43a743-3b29-41b8-ad69-0ab1a073778e" x="320" y="40" width="161" height="35"/>
 				<textElement textAlignment="Center">
-					<font size="15" isBold="true"/>
+					<font fontName="Tahoma" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data Presensi Siswa]]></text>
 			</staticText>
+			<image>
+				<reportElement uuid="2db7fbd0-1b71-4c16-96bc-d44a2be0a101" x="606" y="10" width="89" height="86"/>
+				<imageExpression><![CDATA["D:\\Local Private\\JetBrains\\IntelliJ\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="341f326f-5cad-4c29-acbf-12fdf5371a6a" x="106" y="0" width="100" height="100"/>
+				<imageExpression><![CDATA["D:\\Local Private\\JetBrains\\IntelliJ\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -71,42 +92,42 @@ AND ps.kelas=$P{kelasLogin}]]>
 			<staticText>
 				<reportElement uuid="97d0bf8f-fa88-4e42-9be1-7fc4b49e8f0f" x="94" y="41" width="77" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ID Presensi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="febede4f-4117-419a-823f-50ef8a58f0e8" x="171" y="41" width="100" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NISN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b331c770-f229-4396-8928-b7c54daf013f" x="271" y="41" width="100" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nama Siswa]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="52bfa93e-0d20-4607-97d1-4fa9911c5dbc" x="371" y="41" width="110" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Keterangan Sakit]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="087c3274-74dd-4d9f-80d1-7ef9208b22db" x="481" y="41" width="105" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Keterangan Izin]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="2bca1326-eb86-48eb-bb70-f20081665271" x="586" y="41" width="96" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="13"/>
+					<font size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Keterangan Alfa]]></text>
 			</staticText>
