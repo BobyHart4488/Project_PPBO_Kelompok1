@@ -34,18 +34,26 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch">
+		<band height="104" splitType="Stretch">
+			<image>
+				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="50" y="4" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="649" y="4" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement uuid="6fd34ebd-ee41-479c-9203-6a6fd61ee3f3" x="345" y="0" width="110" height="35"/>
+				<reportElement uuid="6fd34ebd-ee41-479c-9203-6a6fd61ee3f3" x="341" y="38" width="110" height="35"/>
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[Data Guru]]></text>
 			</staticText>
 		</band>
+	</title>
+	<pageHeader>
+		<band height="6" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">

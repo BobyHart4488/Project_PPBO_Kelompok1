@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -229,6 +230,11 @@ public class Utama_Guru extends javax.swing.JFrame {
         btnCetak.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCetakMouseClicked(evt);
+            }
+        });
+        btnCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetakActionPerformed(evt);
             }
         });
 
@@ -507,6 +513,11 @@ public class Utama_Guru extends javax.swing.JFrame {
         btnCetak1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCetak1MouseClicked(evt);
+            }
+        });
+        btnCetak1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetak1ActionPerformed(evt);
             }
         });
 
@@ -900,6 +911,32 @@ public class Utama_Guru extends javax.swing.JFrame {
         String alfa=tablePresensiSiswaKelas.getValueAt(baris, 6).toString();
         txtAlfa.setText(alfa);
     }//GEN-LAST:event_tablePresensiSiswaKelasMouseClicked
+
+    private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
+        try{
+            InputStream is=Utama_Guru.class.getResourceAsStream("/jasper_ppbo_kelompok1/Utama_Guru_Nilai.jasper");
+            HashMap parameter = new HashMap();
+            parameter.put("Loginkelas", Login.kelas);
+            JasperPrint jsPrint=JasperFillManager.fillReport(is, parameter, Config.configDb());
+            JasperViewer.viewReport(jsPrint, false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "Report Data Siswa", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCetakActionPerformed
+
+    private void btnCetak1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetak1ActionPerformed
+        try{
+            InputStream is=Utama_Guru.class.getResourceAsStream("/jasper_ppbo_kelompok1/Utama_Guru_Presensi.jasper");
+            HashMap parameter = new HashMap();
+            parameter.put("kelasLogin", Login.kelas);
+            JasperPrint jsPrint=JasperFillManager.fillReport(is, parameter, Config.configDb());
+            JasperViewer.viewReport(jsPrint, false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "Report Data Siswa", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCetak1ActionPerformed
 
     private void Data(){
         txtNilai.setEditable(true);

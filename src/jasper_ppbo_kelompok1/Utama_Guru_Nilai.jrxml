@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c698d6c-c7f7-4d76-9ace-03ba957294c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Loginkelas" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT id_nilai, ln.nisn, nama, ln.agama, pkn, b_indo, mtk, ipa, ips, b_ing, senbud, pjok
+FROM laporan_nilai ln, siswa s
+WHERE ln.nisn=s.nisn
+AND ln.kelas=$P{Loginkelas}]]>
+	</queryString>
+	<field name="id_nilai" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nisn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="agama" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pkn" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="b_indo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mtk" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ipa" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ips" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="b_ing" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="senbud" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pjok" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id_nilai">
+		<groupExpression><![CDATA[$F{id_nilai}]]></groupExpression>
+	</group>
+	<group name="nisn">
+		<groupExpression><![CDATA[$F{nisn}]]></groupExpression>
+	</group>
+	<group name="nama">
+		<groupExpression><![CDATA[$F{nama}]]></groupExpression>
+	</group>
+	<group name="agama">
+		<groupExpression><![CDATA[$F{agama}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="63" y="0" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="638" y="0" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3222b146-9efc-4683-9b96-edaab05d06f1" x="343" y="41" width="118" height="35"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Nilai Siswa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6ed80778-a577-4c55-b78b-9a180f470c63" x="0" y="41" width="63" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID Nilai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f9e2abe-eecc-4d93-8802-67b2b0412589" x="63" y="41" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NISN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e13c6819-0f92-4e47-9eee-44afa6c64464" x="137" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="697a3304-2d9d-4196-a872-b5f1c5c7abda" x="237" y="41" width="61" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai Agama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e321442f-d398-4b5f-99bd-7de146b61304" x="298" y="41" width="65" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai PKN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="daaf222c-dcdf-410f-a01a-2252fab27888" x="363" y="41" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai B.Indo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ce42e6d6-a290-4400-b399-02db9cbf0c37" x="422" y="41" width="57" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai MTK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2651a515-3232-4b78-bab6-6089a39def34" x="479" y="41" width="53" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai IPA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="644320a5-e1d5-48ed-95d0-59858236742c" x="532" y="41" width="49" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai IPS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04b68a0e-0895-473d-81d3-a141461d7fdf" x="581" y="41" width="73" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai B.Ing]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="26a036a6-7b3a-4852-8c40-8228f463a778" x="654" y="41" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai Senbud]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="22c53fb2-7c9f-44e3-be93-2ebbbd461ab8" x="728" y="41" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nilai PJOK]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8cec5372-dd27-4e22-8050-852b1fdf0750" x="0" y="0" width="63" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_nilai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0965631b-68de-4607-8d9c-dcb46835c58f" x="63" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nisn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="981de370-bfdd-4880-b33c-6b63f5d4733c" x="137" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a320a3f4-cd07-4d09-bfdc-859971eafe11" x="237" y="0" width="61" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{agama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c33a705-b027-4fdb-914d-4e08354b1878" x="298" y="0" width="65" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pkn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b0dd6bb7-513f-4c9c-ae9e-1da20a573a86" x="363" y="0" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{b_indo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9953d0e3-6585-4c37-87b5-4a9cb21c36d3" x="422" y="0" width="57" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mtk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3a5fa5fc-b723-4310-bf7c-a5cd429aed8a" x="481" y="0" width="51" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ipa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1bc05514-8bf0-48e1-966c-50ff9a33f056" x="532" y="0" width="49" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ips}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="411df8f9-b7b7-4c01-87ca-16a7bcc53f71" x="581" y="0" width="73" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{b_ing}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2a472bb4-cddb-4f2e-ab8f-fe2dc01f8812" x="654" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{senbud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9545084-5653-4299-a417-843d8a051349" x="728" y="0" width="74" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pjok}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

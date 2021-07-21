@@ -47,18 +47,26 @@ ORDER BY nisn, kelas]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch">
+		<band height="102" splitType="Stretch">
+			<image>
+				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="49" y="0" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="655" y="2" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement uuid="d5cff82b-ca6f-4645-94e5-54d076ce8014" x="347" y="0" width="110" height="35"/>
+				<reportElement uuid="d5cff82b-ca6f-4645-94e5-54d076ce8014" x="345" y="39" width="110" height="35"/>
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[Data Siswa]]></text>
 			</staticText>
 		</band>
+	</title>
+	<pageHeader>
+		<band height="9" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">

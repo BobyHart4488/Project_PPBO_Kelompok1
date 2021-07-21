@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31e58c30-aad1-41dc-bb8e-00691b14b0c8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kelasLogin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM presensi_siswa ps, siswa s
+WHERE ps.nisn = s.nisn
+AND ps.kelas=$P{kelasLogin}]]>
+	</queryString>
+	<field name="id_presensi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nisn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sakit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="izin" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alfa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id_presensi">
+		<groupExpression><![CDATA[$F{id_presensi}]]></groupExpression>
+	</group>
+	<group name="nisn">
+		<groupExpression><![CDATA[$F{nisn}]]></groupExpression>
+	</group>
+	<group name="sakit">
+		<groupExpression><![CDATA[$F{sakit}]]></groupExpression>
+	</group>
+	<group name="izin">
+		<groupExpression><![CDATA[$F{izin}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement uuid="9fe29938-6159-4f73-8fd6-cc8c9f930628" x="57" y="0" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\TWH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="ec52b4fc-5301-416a-90c5-19ab740bcaf7" x="628" y="1" width="100" height="100"/>
+				<imageExpression><![CDATA["C:\\Users\\Nesya\\Documents\\NetBeansProjects\\Project_PPBO_Kelompok1\\src\\SD.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3a43a743-3b29-41b8-ad69-0ab1a073778e" x="320" y="34" width="161" height="35"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Presensi Siswa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="97d0bf8f-fa88-4e42-9be1-7fc4b49e8f0f" x="94" y="41" width="77" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[ID Presensi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="febede4f-4117-419a-823f-50ef8a58f0e8" x="171" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[NISN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b331c770-f229-4396-8928-b7c54daf013f" x="271" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Nama Siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="52bfa93e-0d20-4607-97d1-4fa9911c5dbc" x="371" y="41" width="110" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Keterangan Sakit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="087c3274-74dd-4d9f-80d1-7ef9208b22db" x="481" y="41" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Keterangan Izin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2bca1326-eb86-48eb-bb70-f20081665271" x="586" y="41" width="96" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Keterangan Alfa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="3ca1debd-a9b2-4fdb-9e79-92d175514389" x="94" y="0" width="77" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_presensi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6e0d3c9-f666-4eb6-ab68-f4283865518d" x="171" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nisn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b689349e-0d56-4509-ba1a-8276a33330f6" x="271" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c88e0f1-dcc3-4200-bd79-cde7cafee2f2" x="371" y="0" width="110" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sakit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7015cba5-c4ed-495d-bcd6-77bcb68d5cbe" x="481" y="0" width="105" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{izin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="310bb716-fcf7-4385-bcec-4f2a8509c2d6" x="586" y="0" width="96" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alfa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
