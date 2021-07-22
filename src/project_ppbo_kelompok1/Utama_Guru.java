@@ -100,7 +100,7 @@ public class Utama_Guru extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanelSiswa.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelSiswa.setBackground(new java.awt.Color(248, 255, 242));
 
         tableSiswaKelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,7 +163,7 @@ public class Utama_Guru extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Data Siswa", jPanelSiswa);
 
-        jPanelNilaiSiswa.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelNilaiSiswa.setBackground(new java.awt.Color(248, 255, 242));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Data Nilai Siswa");
@@ -458,7 +458,7 @@ public class Utama_Guru extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Nilai Siswa", jPanel3);
 
-        jPanelPresensi.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelPresensi.setBackground(new java.awt.Color(248, 255, 242));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("Data Presensi Siswa");

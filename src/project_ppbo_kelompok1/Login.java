@@ -33,7 +33,7 @@ public class Login extends javax.swing.JFrame {
         setLocation(new java.awt.Point(330, 100));
         setSize(new java.awt.Dimension(1200, 800));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(238, 255, 242));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("Sistem Akademik Siswa SD");

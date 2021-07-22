@@ -61,7 +61,7 @@
         <Container class="javax.swing.JPanel" name="jPanelSiswa">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="f2" green="ff" red="f8" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -530,7 +530,7 @@
         <Container class="javax.swing.JPanel" name="jPanelGuru">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="f2" green="ff" red="f8" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>

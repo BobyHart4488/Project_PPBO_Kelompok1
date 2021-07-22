@@ -146,7 +146,7 @@ public class Utama_Admin extends javax.swing.JFrame {
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
-        jPanelSiswa.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelSiswa.setBackground(new java.awt.Color(248, 255, 242));
 
         tableSiswa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -396,7 +396,7 @@ public class Utama_Admin extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Data Siswa", jPanelSiswa);
 
-        jPanelGuru.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelGuru.setBackground(new java.awt.Color(248, 255, 242));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("Data Guru");
